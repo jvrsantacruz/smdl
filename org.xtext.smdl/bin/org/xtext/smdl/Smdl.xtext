@@ -1,0 +1,57 @@
+grammar org.xtext.smdl.Smdl with org.eclipse.xtext.common.Terminals
+
+generate smdl "http://www.xtext.org/smdl/Smdl"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Smdl: Book;
+
+terminal DEC returns ecore::EBigDecimal: ('0'..'9')+ '.' ('0'..'9')*;
+
+Book:
+    'book'
+     (attrs+=Attribute)+
+     (binding=Binding)?
+     (items+=(Quire|Guard))*
+     'end'
+;
+
+Attribute: AttrBool|AttrStr|AttrInt|AttrDec|AttrIntRange|AttrDecRange;
+AttrBool: name=ID;
+AttrStr: name=ID value=STRING;
+AttrInt: name=ID value=INT;
+AttrDec: name=ID value=DEC;
+AttrIntRange: name=ID start=INT '-' end=INT;
+AttrDecRange: name=ID start=DEC 'x' end=DEC;
+
+Binding: {Binding}'binding' (attrs+=Attribute)* 'end' ;
+
+Numerator: {Numerator}('(' n=INT ')')?;
+
+Guard: 'page' num=Numerator (attrs+=Attribute)* 'end';
+
+Quire:
+	'quire' num=Numerator
+	(attrs+=Attribute)*
+	(pages+=Page)*
+	'end'
+;
+
+Page: 
+    'page' num=Numerator 
+	   (attrs+=Attribute)*
+	   (contents+=Content)*
+	'end'
+;
+
+Content: 
+  'initial' num=Numerator type='initial' (attrs+=Attribute)* 'end'
+| 'decoration' num=Numerator type='decoration' (attrs+=Attribute)* 'end'
+| 'vignette' num=Numerator type='vignette' (attrs+=Attribute)* 'end'
+| 'symbol' num=Numerator type='symbol' (attrs+=Attribute)* 'end'
+| 'annotation' num=Numerator type='annotation' (attrs+=Attribute)* 'end'
+| 'colophon' num=Numerator type='colophon' (attrs+=Attribute)* 'end'
+| 'exlibris' num=Numerator type='exlibris' (attrs+=Attribute)* 'end'
+| 'rubric' num=Numerator type='rubric' (attrs+=Attribute)* 'end'
+| 'heraldic' num=Numerator type='heraldic' (attrs+=Attribute)* 'end'
+;
