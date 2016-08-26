@@ -995,24 +995,10 @@ ruleContent returns [EObject current=null]
 			)
 			(
 				(
-					lv_type_2_0='initial'
 					{
-						newLeafNode(lv_type_2_0, grammarAccess.getContentAccess().getTypeInitialKeyword_0_2_0());
+						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_0_2_0());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getContentRule());
-						}
-						setWithLastConsumed($current, "type", lv_type_2_0, "initial");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_0_3_0());
-					}
-					lv_attrs_3_0=ruleAttribute
+					lv_attrs_2_0=ruleAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1020,29 +1006,29 @@ ruleContent returns [EObject current=null]
 						add(
 							$current,
 							"attrs",
-							lv_attrs_3_0,
+							lv_attrs_2_0,
 							"org.xtext.smdl.Smdl.Attribute");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_4='end'
+			otherlv_3='end'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getContentAccess().getEndKeyword_0_4());
+				newLeafNode(otherlv_3, grammarAccess.getContentAccess().getEndKeyword_0_3());
 			}
 		)
 		    |
 		(
-			otherlv_5='decoration'
+			otherlv_4='decoration'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getContentAccess().getDecorationKeyword_1_0());
+				newLeafNode(otherlv_4, grammarAccess.getContentAccess().getDecorationKeyword_1_0());
 			}
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getContentAccess().getNumNumeratorParserRuleCall_1_1_0());
 					}
-					lv_num_6_0=ruleNumerator
+					lv_num_5_0=ruleNumerator
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1050,7 +1036,7 @@ ruleContent returns [EObject current=null]
 						set(
 							$current,
 							"num",
-							lv_num_6_0,
+							lv_num_5_0,
 							"org.xtext.smdl.Smdl.Numerator");
 						afterParserOrEnumRuleCall();
 					}
@@ -1058,24 +1044,10 @@ ruleContent returns [EObject current=null]
 			)
 			(
 				(
-					lv_type_7_0='decoration'
 					{
-						newLeafNode(lv_type_7_0, grammarAccess.getContentAccess().getTypeDecorationKeyword_1_2_0());
+						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_1_2_0());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getContentRule());
-						}
-						setWithLastConsumed($current, "type", lv_type_7_0, "decoration");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_1_3_0());
-					}
-					lv_attrs_8_0=ruleAttribute
+					lv_attrs_6_0=ruleAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1083,29 +1055,29 @@ ruleContent returns [EObject current=null]
 						add(
 							$current,
 							"attrs",
-							lv_attrs_8_0,
+							lv_attrs_6_0,
 							"org.xtext.smdl.Smdl.Attribute");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_9='end'
+			otherlv_7='end'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getContentAccess().getEndKeyword_1_4());
+				newLeafNode(otherlv_7, grammarAccess.getContentAccess().getEndKeyword_1_3());
 			}
 		)
 		    |
 		(
-			otherlv_10='vignette'
+			otherlv_8='vignette'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getContentAccess().getVignetteKeyword_2_0());
+				newLeafNode(otherlv_8, grammarAccess.getContentAccess().getVignetteKeyword_2_0());
 			}
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getContentAccess().getNumNumeratorParserRuleCall_2_1_0());
 					}
-					lv_num_11_0=ruleNumerator
+					lv_num_9_0=ruleNumerator
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1113,7 +1085,7 @@ ruleContent returns [EObject current=null]
 						set(
 							$current,
 							"num",
-							lv_num_11_0,
+							lv_num_9_0,
 							"org.xtext.smdl.Smdl.Numerator");
 						afterParserOrEnumRuleCall();
 					}
@@ -1121,24 +1093,10 @@ ruleContent returns [EObject current=null]
 			)
 			(
 				(
-					lv_type_12_0='vignette'
 					{
-						newLeafNode(lv_type_12_0, grammarAccess.getContentAccess().getTypeVignetteKeyword_2_2_0());
+						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_2_2_0());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getContentRule());
-						}
-						setWithLastConsumed($current, "type", lv_type_12_0, "vignette");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_2_3_0());
-					}
-					lv_attrs_13_0=ruleAttribute
+					lv_attrs_10_0=ruleAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1146,29 +1104,29 @@ ruleContent returns [EObject current=null]
 						add(
 							$current,
 							"attrs",
-							lv_attrs_13_0,
+							lv_attrs_10_0,
 							"org.xtext.smdl.Smdl.Attribute");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_14='end'
+			otherlv_11='end'
 			{
-				newLeafNode(otherlv_14, grammarAccess.getContentAccess().getEndKeyword_2_4());
+				newLeafNode(otherlv_11, grammarAccess.getContentAccess().getEndKeyword_2_3());
 			}
 		)
 		    |
 		(
-			otherlv_15='symbol'
+			otherlv_12='symbol'
 			{
-				newLeafNode(otherlv_15, grammarAccess.getContentAccess().getSymbolKeyword_3_0());
+				newLeafNode(otherlv_12, grammarAccess.getContentAccess().getSymbolKeyword_3_0());
 			}
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getContentAccess().getNumNumeratorParserRuleCall_3_1_0());
 					}
-					lv_num_16_0=ruleNumerator
+					lv_num_13_0=ruleNumerator
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1176,7 +1134,7 @@ ruleContent returns [EObject current=null]
 						set(
 							$current,
 							"num",
-							lv_num_16_0,
+							lv_num_13_0,
 							"org.xtext.smdl.Smdl.Numerator");
 						afterParserOrEnumRuleCall();
 					}
@@ -1184,22 +1142,57 @@ ruleContent returns [EObject current=null]
 			)
 			(
 				(
-					lv_type_17_0='symbol'
 					{
-						newLeafNode(lv_type_17_0, grammarAccess.getContentAccess().getTypeSymbolKeyword_3_2_0());
+						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_3_2_0());
 					}
+					lv_attrs_14_0=ruleAttribute
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getContentRule());
+							$current = createModelElementForParent(grammarAccess.getContentRule());
 						}
-						setWithLastConsumed($current, "type", lv_type_17_0, "symbol");
+						add(
+							$current,
+							"attrs",
+							lv_attrs_14_0,
+							"org.xtext.smdl.Smdl.Attribute");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_15='end'
+			{
+				newLeafNode(otherlv_15, grammarAccess.getContentAccess().getEndKeyword_3_3());
+			}
+		)
+		    |
+		(
+			otherlv_16='annotation'
+			{
+				newLeafNode(otherlv_16, grammarAccess.getContentAccess().getAnnotationKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getContentAccess().getNumNumeratorParserRuleCall_4_1_0());
+					}
+					lv_num_17_0=ruleNumerator
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getContentRule());
+						}
+						set(
+							$current,
+							"num",
+							lv_num_17_0,
+							"org.xtext.smdl.Smdl.Numerator");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_3_3_0());
+						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_4_2_0());
 					}
 					lv_attrs_18_0=ruleAttribute
 					{
@@ -1217,19 +1210,19 @@ ruleContent returns [EObject current=null]
 			)*
 			otherlv_19='end'
 			{
-				newLeafNode(otherlv_19, grammarAccess.getContentAccess().getEndKeyword_3_4());
+				newLeafNode(otherlv_19, grammarAccess.getContentAccess().getEndKeyword_4_3());
 			}
 		)
 		    |
 		(
-			otherlv_20='annotation'
+			otherlv_20='colophon'
 			{
-				newLeafNode(otherlv_20, grammarAccess.getContentAccess().getAnnotationKeyword_4_0());
+				newLeafNode(otherlv_20, grammarAccess.getContentAccess().getColophonKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getContentAccess().getNumNumeratorParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getContentAccess().getNumNumeratorParserRuleCall_5_1_0());
 					}
 					lv_num_21_0=ruleNumerator
 					{
@@ -1247,24 +1240,10 @@ ruleContent returns [EObject current=null]
 			)
 			(
 				(
-					lv_type_22_0='annotation'
 					{
-						newLeafNode(lv_type_22_0, grammarAccess.getContentAccess().getTypeAnnotationKeyword_4_2_0());
+						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_5_2_0());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getContentRule());
-						}
-						setWithLastConsumed($current, "type", lv_type_22_0, "annotation");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_4_3_0());
-					}
-					lv_attrs_23_0=ruleAttribute
+					lv_attrs_22_0=ruleAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1272,92 +1251,29 @@ ruleContent returns [EObject current=null]
 						add(
 							$current,
 							"attrs",
-							lv_attrs_23_0,
+							lv_attrs_22_0,
 							"org.xtext.smdl.Smdl.Attribute");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_24='end'
+			otherlv_23='end'
 			{
-				newLeafNode(otherlv_24, grammarAccess.getContentAccess().getEndKeyword_4_4());
+				newLeafNode(otherlv_23, grammarAccess.getContentAccess().getEndKeyword_5_3());
 			}
 		)
 		    |
 		(
-			otherlv_25='colophon'
+			otherlv_24='exlibris'
 			{
-				newLeafNode(otherlv_25, grammarAccess.getContentAccess().getColophonKeyword_5_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getContentAccess().getNumNumeratorParserRuleCall_5_1_0());
-					}
-					lv_num_26_0=ruleNumerator
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getContentRule());
-						}
-						set(
-							$current,
-							"num",
-							lv_num_26_0,
-							"org.xtext.smdl.Smdl.Numerator");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				(
-					lv_type_27_0='colophon'
-					{
-						newLeafNode(lv_type_27_0, grammarAccess.getContentAccess().getTypeColophonKeyword_5_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getContentRule());
-						}
-						setWithLastConsumed($current, "type", lv_type_27_0, "colophon");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_5_3_0());
-					}
-					lv_attrs_28_0=ruleAttribute
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getContentRule());
-						}
-						add(
-							$current,
-							"attrs",
-							lv_attrs_28_0,
-							"org.xtext.smdl.Smdl.Attribute");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)*
-			otherlv_29='end'
-			{
-				newLeafNode(otherlv_29, grammarAccess.getContentAccess().getEndKeyword_5_4());
-			}
-		)
-		    |
-		(
-			otherlv_30='exlibris'
-			{
-				newLeafNode(otherlv_30, grammarAccess.getContentAccess().getExlibrisKeyword_6_0());
+				newLeafNode(otherlv_24, grammarAccess.getContentAccess().getExlibrisKeyword_6_0());
 			}
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getContentAccess().getNumNumeratorParserRuleCall_6_1_0());
 					}
-					lv_num_31_0=ruleNumerator
+					lv_num_25_0=ruleNumerator
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1365,7 +1281,7 @@ ruleContent returns [EObject current=null]
 						set(
 							$current,
 							"num",
-							lv_num_31_0,
+							lv_num_25_0,
 							"org.xtext.smdl.Smdl.Numerator");
 						afterParserOrEnumRuleCall();
 					}
@@ -1373,24 +1289,10 @@ ruleContent returns [EObject current=null]
 			)
 			(
 				(
-					lv_type_32_0='exlibris'
 					{
-						newLeafNode(lv_type_32_0, grammarAccess.getContentAccess().getTypeExlibrisKeyword_6_2_0());
+						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_6_2_0());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getContentRule());
-						}
-						setWithLastConsumed($current, "type", lv_type_32_0, "exlibris");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_6_3_0());
-					}
-					lv_attrs_33_0=ruleAttribute
+					lv_attrs_26_0=ruleAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1398,29 +1300,29 @@ ruleContent returns [EObject current=null]
 						add(
 							$current,
 							"attrs",
-							lv_attrs_33_0,
+							lv_attrs_26_0,
 							"org.xtext.smdl.Smdl.Attribute");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_34='end'
+			otherlv_27='end'
 			{
-				newLeafNode(otherlv_34, grammarAccess.getContentAccess().getEndKeyword_6_4());
+				newLeafNode(otherlv_27, grammarAccess.getContentAccess().getEndKeyword_6_3());
 			}
 		)
 		    |
 		(
-			otherlv_35='rubric'
+			otherlv_28='rubric'
 			{
-				newLeafNode(otherlv_35, grammarAccess.getContentAccess().getRubricKeyword_7_0());
+				newLeafNode(otherlv_28, grammarAccess.getContentAccess().getRubricKeyword_7_0());
 			}
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getContentAccess().getNumNumeratorParserRuleCall_7_1_0());
 					}
-					lv_num_36_0=ruleNumerator
+					lv_num_29_0=ruleNumerator
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1428,7 +1330,7 @@ ruleContent returns [EObject current=null]
 						set(
 							$current,
 							"num",
-							lv_num_36_0,
+							lv_num_29_0,
 							"org.xtext.smdl.Smdl.Numerator");
 						afterParserOrEnumRuleCall();
 					}
@@ -1436,24 +1338,10 @@ ruleContent returns [EObject current=null]
 			)
 			(
 				(
-					lv_type_37_0='rubric'
 					{
-						newLeafNode(lv_type_37_0, grammarAccess.getContentAccess().getTypeRubricKeyword_7_2_0());
+						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_7_2_0());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getContentRule());
-						}
-						setWithLastConsumed($current, "type", lv_type_37_0, "rubric");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_7_3_0());
-					}
-					lv_attrs_38_0=ruleAttribute
+					lv_attrs_30_0=ruleAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
