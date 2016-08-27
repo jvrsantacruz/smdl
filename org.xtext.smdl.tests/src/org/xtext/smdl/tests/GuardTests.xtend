@@ -28,8 +28,11 @@ class GuardTests {
 	def void load() {
 		'''
 book
-  description "value"
-  page end
+  title "The Title of the Book"
+  description "The Book Description"
+  page (2)
+    description "Empty page"
+  end
 end
 		'''.parse.assertNoErrors
 	}
@@ -38,7 +41,7 @@ end
 	def void loadMultipleGuard() {
 		var result = '''
 book
-  description "value"
+  title "Book title"
   page end
   page (2) end
 end
@@ -52,12 +55,13 @@ end
 	def void repeatedAttributes () {
 		'''
 book
+  title "Book title"
   page
     description "value"
     description "value"
   end
 end
-		'''.parse.assertError(SmdlPackage.Literals.BOOK, "Repeated attributes in Book", 7, 11)
+		'''.parse.assertError(SmdlPackage.Literals.GUARD, "Repeated attributes in Guard")
 	}
 
 }

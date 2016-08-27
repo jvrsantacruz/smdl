@@ -27,9 +27,18 @@ class PageTests {
 	def void loadPages() {
 		var result = '''
 book
-  description "value"
+  title "Book title"
+  description "Book long description"
   quire 
-    page end
+    support "parchment"
+    page (2) 
+      description "First two pages all right"
+    end
+    page (2)
+      mutilated
+      support "paper"
+      description "Could not be shipped originally"
+    end
   end
 end
 		'''.parse

@@ -29,21 +29,12 @@ class BindingTests {
 	def void load() {
 		'''
 book
-  key "value"
-  binding end
+  title "Book"
+  binding 
+    type "Leather"
+  end
 end
 		'''.parse.assertNoErrors
 	}
 
-	@Test 
-	def void repeatedAttributes() {
-		'''
-book
-  binding
-    key "value"
-    key "value"
-  end
-end
-		'''.parse.assertError(SmdlPackage.Literals.BINDING, "Repeated attributes in Binding", 7, 11)
-	}
 }

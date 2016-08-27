@@ -28,7 +28,7 @@ class QuireTests {
 	def void load () {
 		var result = '''
 book
-  key "value"
+  title "Book Title"
   quire end
 end
 		'''.parse
@@ -41,7 +41,7 @@ end
 	def void loadMultipleQuires() {
 		var result = '''
 book
-  key "value"
+  title "value"
   quire end
   quire (2) end
   quire end

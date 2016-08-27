@@ -28,26 +28,20 @@ class ContentTests{
 	def void load() {
 		'''
 book
+  title "Book title"
   quire
     page
-      initial end
+      initial 
+        description "Tree leaves and small dogs for chapter R"
+      end
+      annotation
+        description "Owner's  handwritten signature"
+      end
     end
   end
 end
 		'''.parse.assertNoErrors
 	}
 
-	@Test 
-	def void repeatedAttributes () {
-		'''
-book
-  quire
-    page
-      initial end
-    end
-  end
-end
-		'''.parse.assertError(SmdlPackage.Literals.BOOK, "Repeated attributes in Book", 7, 11)
-	}
 
 }

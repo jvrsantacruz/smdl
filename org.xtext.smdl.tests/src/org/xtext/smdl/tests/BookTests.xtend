@@ -28,9 +28,31 @@ class BookTests {
 	def void load() {
 		'''
 book
-  key "value"
-  koy "value"
-  binding end
+   title "Book's title"
+   signature "BT23423"
+   library "Biblioteca Nacional"
+   support "parchment"
+
+   binding 
+     type "leather"
+   end
+
+   page end
+   page (2) end
+
+   quire
+     support "paper"
+
+     page (2)
+       description "Big and rectangular"
+       initial 
+         description "Golden big chapter initial L"
+       end
+     end
+   end
+
+   quire (2)
+   end
 end
 		'''.parse.assertNoErrors
 	}
@@ -39,8 +61,8 @@ end
 	def void repeatedAttributes() {
 		'''
 book
-  key "value"
-  key "value"
+  title "value"
+  title "value"
 end
 		'''.parse.assertError(SmdlPackage.Literals.BOOK, "Repeated attributes in Book", 7, 11)
 	}
