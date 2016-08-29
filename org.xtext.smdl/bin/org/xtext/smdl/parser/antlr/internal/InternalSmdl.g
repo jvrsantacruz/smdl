@@ -1349,29 +1349,29 @@ ruleContent returns [EObject current=null]
 						add(
 							$current,
 							"attrs",
-							lv_attrs_38_0,
+							lv_attrs_30_0,
 							"org.xtext.smdl.Smdl.Attribute");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_39='end'
+			otherlv_31='end'
 			{
-				newLeafNode(otherlv_39, grammarAccess.getContentAccess().getEndKeyword_7_4());
+				newLeafNode(otherlv_31, grammarAccess.getContentAccess().getEndKeyword_7_3());
 			}
 		)
 		    |
 		(
-			otherlv_40='heraldic'
+			otherlv_32='heraldic'
 			{
-				newLeafNode(otherlv_40, grammarAccess.getContentAccess().getHeraldicKeyword_8_0());
+				newLeafNode(otherlv_32, grammarAccess.getContentAccess().getHeraldicKeyword_8_0());
 			}
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getContentAccess().getNumNumeratorParserRuleCall_8_1_0());
 					}
-					lv_num_41_0=ruleNumerator
+					lv_num_33_0=ruleNumerator
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1379,7 +1379,7 @@ ruleContent returns [EObject current=null]
 						set(
 							$current,
 							"num",
-							lv_num_41_0,
+							lv_num_33_0,
 							"org.xtext.smdl.Smdl.Numerator");
 						afterParserOrEnumRuleCall();
 					}
@@ -1387,24 +1387,10 @@ ruleContent returns [EObject current=null]
 			)
 			(
 				(
-					lv_type_42_0='heraldic'
 					{
-						newLeafNode(lv_type_42_0, grammarAccess.getContentAccess().getTypeHeraldicKeyword_8_2_0());
+						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_8_2_0());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getContentRule());
-						}
-						setWithLastConsumed($current, "type", lv_type_42_0, "heraldic");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getContentAccess().getAttrsAttributeParserRuleCall_8_3_0());
-					}
-					lv_attrs_43_0=ruleAttribute
+					lv_attrs_34_0=ruleAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getContentRule());
@@ -1412,15 +1398,15 @@ ruleContent returns [EObject current=null]
 						add(
 							$current,
 							"attrs",
-							lv_attrs_43_0,
+							lv_attrs_34_0,
 							"org.xtext.smdl.Smdl.Attribute");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_44='end'
+			otherlv_35='end'
 			{
-				newLeafNode(otherlv_44, grammarAccess.getContentAccess().getEndKeyword_8_4());
+				newLeafNode(otherlv_35, grammarAccess.getContentAccess().getEndKeyword_8_3());
 			}
 		)
 	)
