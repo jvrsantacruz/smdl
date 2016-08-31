@@ -45,13 +45,13 @@ Page:
 ;
 
 Content: 
-  'initial' num=Numerator type='initial' (attrs+=Attribute)* 'end'
-| 'decoration' num=Numerator type='decoration' (attrs+=Attribute)* 'end'
-| 'vignette' num=Numerator type='vignette' (attrs+=Attribute)* 'end'
-| 'symbol' num=Numerator type='symbol' (attrs+=Attribute)* 'end'
-| 'annotation' num=Numerator type='annotation' (attrs+=Attribute)* 'end'
-| 'colophon' num=Numerator type='colophon' (attrs+=Attribute)* 'end'
-| 'exlibris' num=Numerator type='exlibris' (attrs+=Attribute)* 'end'
-| 'rubric' num=Numerator type='rubric' (attrs+=Attribute)* 'end'
-| 'heraldic' num=Numerator type='heraldic' (attrs+=Attribute)* 'end'
+  'initial' num=Numerator  (attrs+=Attribute)* 'end'
+| 'decoration' num=Numerator  (attrs+=Attribute)* 'end'
+| 'vignette' num=Numerator  (attrs+=Attribute)* 'end'
+| 'symbol' num=Numerator  (attrs+=Attribute)* 'end'
+| 'annotation' num=Numerator  (attrs+=Attribute)* 'end'
+| 'colophon' num=Numerator  (attrs+=Attribute)* 'end'
+| 'exlibris' num=Numerator  (attrs+=Attribute)* 'end'
+| 'rubric' num=Numerator  (attrs+=Attribute)* 'end'
+| 'heraldic' num=Numerator  (attrs+=Attribute)* 'end'
 ;
