@@ -11,4 +11,6 @@ class Content {
 		// Add type to the attributes
 		attrs.set('type', new Attr('type', new StringValue(type)))
 	}
+	
+	def getAttrs() { attrs }
 }

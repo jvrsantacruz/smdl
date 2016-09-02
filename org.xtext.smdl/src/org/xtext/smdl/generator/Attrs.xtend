@@ -22,4 +22,7 @@ class Attrs {
 	def set(String name, Attr attr) {
 		attrs.put(name, attr)
 	}
+	
+	def keys() { attrs.keySet }
+	def values() { attrs.values }
 }

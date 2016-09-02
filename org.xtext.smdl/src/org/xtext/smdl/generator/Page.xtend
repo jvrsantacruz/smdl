@@ -24,6 +24,9 @@ class Page {
 		var num = content.getNum().getN()
 		num = if (num > 0) num else 1
 		for(var i = 0; i < num; i++)
-			contents.add(new Content(this, content.getType(), content))
+			contents.add(new Content(this, "type", content))
 	}
+
+	def getAttrs() { attrs }
+	def getContents() { contents }
 }
