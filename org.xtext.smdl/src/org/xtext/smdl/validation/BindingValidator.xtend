@@ -16,7 +16,7 @@ import org.xtext.smdl.smdl.Binding
 class BindingValidator extends AbstractSmdlValidator {
 	
 	@Check
-	def checkBookAttributes(Binding obj) {
+	def checkAttributes(Binding obj) {
 		var attrs = obj.getAttrs().map[ a | a.name ];
 		var set = new HashSet<String>(attrs);
 		if (set.size() != attrs.size())

@@ -12,12 +12,24 @@ import org.xtext.smdl.smdl.Page
 import org.xtext.smdl.smdl.Content
 import org.xtext.smdl.smdl.Guard
 import org.xtext.smdl.smdl.Quire
+import java.util.HashMap
+import org.xtext.smdl.smdl.AttrStr
+import org.xtext.smdl.smdl.AttrIntRange
+import org.xtext.smdl.smdl.AttrInt
+import org.xtext.smdl.smdl.impl.AttrIntImpl
+import org.xtext.smdl.smdl.impl.AttrStrImpl
+import org.xtext.smdl.smdl.impl.AttrIntRangeImpl
+import org.xtext.smdl.smdl.impl.AttrDecRangeImpl
+import org.xtext.smdl.smdl.impl.AttrBoolImpl
+
+//import org.eclipse.xtext.validation.ComposedChecks
 
 /**
  * This class contains custom validation rules. 
  *
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
+//@ComposedChecks(validators={BookValidator.class})
 class SmdlValidator extends AbstractSmdlValidator {
 	
 	@Check
@@ -57,7 +69,7 @@ class SmdlValidator extends AbstractSmdlValidator {
 		var attrs = guard.getAttrs().map[ a | a.name ];
 		var set = new HashSet<String>(attrs);
 		if (set.size() != attrs.size())
-			error('Repeated attributes in Book', guard, SmdlPackage::eINSTANCE.getBook_Attrs())
+			error('Repeated attributes in Book', guard, SmdlPackage::eINSTANCE.getGuard_Attrs())
 	}
 
 	@Check
@@ -69,10 +81,168 @@ class SmdlValidator extends AbstractSmdlValidator {
 	}
 
 	@Check
-	def checkAllowedAttributes(Quire quire) {
-		var attrs = quire.getAttrs().map[ a | a.name ];
-		var set = new HashSet<String>(attrs);
-		if (set.size() != attrs.size())
-			error('Repeated attributes in Quire', quire, SmdlPackage::eINSTANCE.getQuire_Attrs())
+	def checkBookMandatoryAttributes(Book obj) {
+		var mandatory = #{'title'}
+		var attrs = new HashSet<String>(obj.getAttrs().map[ a | a.name ])
+		for(attr: mandatory) {
+			if ( ! attrs.contains(attr) )
+				error('''Missing mandatory attribute '«attr»' ''', obj, SmdlPackage::eINSTANCE.getBook_Attrs())
+		}
 	}
+
+	@Check
+	def checkBookValidAttributes(Book obj) {
+		var cls = obj.getClass().getName()
+
+		var valid = #{
+			'title' -> AttrStrImpl,
+			'signature' -> AttrStrImpl,
+			'old_signature' -> AttrStrImpl,
+			'datation' -> AttrIntRangeImpl,
+			'support' -> AttrStrImpl,
+			'description' -> AttrStrImpl,
+			'dimensions' -> AttrDecRangeImpl,
+			'library' -> AttrStrImpl,
+			'bifoliums' -> AttrIntImpl
+		}
+
+		for(attr: obj.getAttrs()) {
+			var name = attr.getName()
+			var type = valid.get(attr.getName())
+			if (type == null)
+				error('''Invalid attribute for «cls»: '«name»' ''', obj, SmdlPackage::eINSTANCE.getBook_Attrs())
+
+			if (attr.class != type)
+				error('''Invalid type for «cls» attribute: '«name»' ''', obj, SmdlPackage::eINSTANCE.getBook_Attrs())
+		}
+	}
+
+	@Check
+	def checkBindingMandatoryAttributes(Binding obj) {
+		var mandatory = #{'type'}
+		var attrs = new HashSet<String>(obj.getAttrs().map[ a | a.name ])
+		for(attr: mandatory) {
+			if ( ! attrs.contains(attr) )
+				error('''Missing mandatory attribute '«attr»' ''', obj, SmdlPackage::eINSTANCE.getBinding_Attrs())
+		}
+	}
+
+	@Check
+	def checkBindingValidAttributes(Binding obj) {
+		var cls = obj.getClass().getName()
+
+		var valid = #{
+			'type' -> AttrStrImpl,
+			'dimensions' -> AttrDecRangeImpl,
+			'description' -> AttrStrImpl
+		}
+
+		for(attr: obj.getAttrs()) {
+			var name = attr.getName()
+			var type = valid.get(attr.getName())
+			if (type == null)
+				error('''Invalid attribute for «cls»: '«name»' ''', obj, SmdlPackage::eINSTANCE.getBinding_Attrs())
+
+			if (attr.class != type)
+				error('''Invalid type for «cls» attribute: '«name»' ''', obj, SmdlPackage::eINSTANCE.getBinding_Attrs())
+		}
+	}
+
+	@Check
+	def checkGuardValidAttributes(Guard obj) {
+		var cls = obj.getClass().getName()
+
+		var valid = #{
+			'position' -> AttrStrImpl,
+			'flyleaf' -> AttrBoolImpl,
+			'support' -> AttrStrImpl,
+			'dimensions' -> AttrDecRangeImpl,
+			'description' -> AttrStrImpl
+		}
+
+		for(attr: obj.getAttrs()) {
+			var name = attr.getName()
+			var type = valid.get(attr.getName())
+			if (type == null)
+				error('''Invalid attribute for «cls»: '«name»' ''', obj, SmdlPackage::eINSTANCE.getGuard_Attrs())
+
+			if (attr.class != type)
+				error('''Invalid type for «cls» attribute: '«name»' ''', obj, SmdlPackage::eINSTANCE.getGuard_Attrs())
+		}
+	}
+
+	@Check
+	def checkQuireValidAttributes(Quire obj) {
+		var cls = obj.getClass().getName()
+
+		var valid = #{
+			'position' -> AttrStrImpl,
+			'pages' -> AttrIntImpl,
+			'support' -> AttrStrImpl,
+			'mutilated' -> AttrBoolImpl,
+			'perforation' -> AttrBoolImpl,
+			'bifoliums' -> AttrIntImpl,
+			'dimensions' -> AttrDecRangeImpl,
+			'description' -> AttrStrImpl
+		}
+
+		for(attr: obj.getAttrs()) {
+			var name = attr.getName()
+			var type = valid.get(attr.getName())
+			if (type == null)
+				error('''Invalid attribute for «cls»: '«name»' ''', obj, SmdlPackage::eINSTANCE.getQuire_Attrs())
+
+			if (attr.class != type)
+				error('''Invalid type for «cls» attribute: '«name»' ''', obj, SmdlPackage::eINSTANCE.getQuire_Attrs())
+		}
+	}
+
+	@Check
+	def checkPageValidAttributes(Page obj) {
+		var cls = obj.getClass().getName()
+
+		var valid = #{
+			'position' -> AttrStrImpl,
+			'foliation' -> AttrIntImpl,
+			'support' -> AttrStrImpl,
+			'mutilated' -> AttrBoolImpl,
+			'perforation' -> AttrBoolImpl,
+			'dimensions' -> AttrDecRangeImpl,
+			'description' -> AttrStrImpl,
+			'transcription' -> AttrStrImpl,
+			'writing' -> AttrStrImpl
+		}
+
+		for(attr: obj.getAttrs()) {
+			var name = attr.getName()
+			var type = valid.get(attr.getName())
+			if (type == null)
+				error('''Invalid attribute for «cls»: '«name»' ''', obj, SmdlPackage::eINSTANCE.getPage_Attrs())
+
+			if (attr.class != type)
+				error('''Invalid type for «cls» attribute: '«name»' ''', obj, SmdlPackage::eINSTANCE.getPage_Attrs())
+		}
+	}
+
+	@Check
+	def checkContentValidAttributes(Content obj) {
+		var cls = obj.getClass().getName()
+
+		var valid = #{
+			'type' -> AttrStrImpl,
+			'dimensions' -> AttrDecRangeImpl,
+			'description' -> AttrStrImpl
+		}
+
+		for(attr: obj.getAttrs()) {
+			var name = attr.getName()
+			var type = valid.get(attr.getName())
+			if (type == null)
+				error('''Invalid attribute for «cls»: '«name»' ''', obj, SmdlPackage::eINSTANCE.getContent_Attrs())
+
+			if (attr.class != type)
+				error('''Invalid type for «cls» attribute: '«name»' ''', obj, SmdlPackage::eINSTANCE.getContent_Attrs())
+		}
+	}
+
 }
