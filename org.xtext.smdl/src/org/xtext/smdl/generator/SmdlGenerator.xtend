@@ -19,11 +19,8 @@ class SmdlGenerator extends AbstractGenerator {
         fsa.generateFile('book.txt', 'People to greet: ');
         for(item: resource.allContents.toIterable.filter(typeof(org.xtext.smdl.smdl.Book))) {
         	var book = new Book(item)
-			System.out.println(book)
-			System.out.println(book.attrs)
-			System.out.println(book.binding)
-			System.out.println(book.guards)
-			System.out.println(book.quires)
+        	var generator = new JsonGenerator();
+        	System.out.println(generator.compile(book));
         }
     }
 }

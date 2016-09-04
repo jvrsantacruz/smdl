@@ -62,7 +62,5 @@ public class Main {
 		GeneratorContext context = new GeneratorContext();
 		context.setCancelIndicator(CancelIndicator.NullImpl);
 		generator.generate(resource, fileAccess, context);
-
-		System.out.println("Code generation finished.");
 	}
 }
