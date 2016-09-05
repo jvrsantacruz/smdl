@@ -92,7 +92,7 @@ class IntRangeValue extends Value {
 		_value = value
 	}
 	
-	override def value() {
+	def override Pair<Integer,Integer> value() {
 		return _value;
 	}
 }
@@ -104,7 +104,7 @@ class DecRangeValue extends Value {
 		_value = value
 	}
 
-	override def value() {
+	def override Pair<BigDecimal, BigDecimal> value() {
 		return _value;
 	}
 }
