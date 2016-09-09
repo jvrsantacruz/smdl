@@ -16,7 +16,7 @@ import org.xtext.smdl.generator.Book
 class SmdlGenerator extends AbstractGenerator {
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-        fsa.generateFile('book.txt', 'People to greet: ');
+        //fsa.generateFile('book.txt', 'People to greet: ');
         for(item: resource.allContents.toIterable.filter(typeof(org.xtext.smdl.smdl.Book))) {
         	var book = new Book(item)
         	var generator = new JsonGenerator();

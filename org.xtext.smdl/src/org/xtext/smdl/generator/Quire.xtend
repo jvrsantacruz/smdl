@@ -19,7 +19,7 @@ class Quire {
 		for(page: quire.getPages())
 			add(page)
 	}
-	
+
 	def add(org.xtext.smdl.smdl.Page page) {
 		var num = page.getNum().getN()
 		num = if (num > 0) num else 1
