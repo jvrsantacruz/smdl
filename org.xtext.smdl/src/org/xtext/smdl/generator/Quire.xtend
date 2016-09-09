@@ -27,6 +27,13 @@ class Quire {
 			pages.add(new Page(this, pages.size() + 1, page))
 	}
 
+	def Attr get(String key) {
+		var value = attrs.get(key)
+		if (value == null)
+		    value = parent.get(key)
+		return value
+	}
+
 	def getAttrs() { attrs }
 	def getPages() { pages }
 }
